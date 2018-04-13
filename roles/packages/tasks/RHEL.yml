@@ -1,0 +1,26 @@
+---
+
+- name: install RHEL packages
+  become: true
+  vars:
+    packagelist:
+      - git
+      - python2
+      - screen
+      - tmux
+      - util-linux
+      - vim-common
+      - vim-enhanced
+      - vim-filesystem
+      - vim-minimal
+      - virt-what
+  yum:
+    pkg: "{{ packagelist }}"
+    state: installed
+
+- name: upgrade all packages
+  become: true
+  yum:
+    name: '*'
+    state: latest
+
