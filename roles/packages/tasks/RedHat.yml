@@ -1,12 +1,20 @@
 ---
 
+- name: install the EPEL (Extra Packages for Enterprise Linux) repository
+  become: true
+  yum:
+    pkg: https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    state: present
+
 - name: install RHEL packages
   become: true
   vars:
     packagelist:
+      - ack
       - git
       - python2
       - screen
+      - the_silver_searcher
       - tmux
       - util-linux
       - vim-common
