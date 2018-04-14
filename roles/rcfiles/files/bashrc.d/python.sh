@@ -1,1 +1,1 @@
-export PIP_USE_MIRRORS=1
+export PIP_REQUIRE_VIRTUALENV=true
