@@ -1,0 +1,40 @@
+---
+
+# install all my resource files
+
+- name: install source files as "dotfiles"
+  vars:
+    HOME: "{{ ansible_env.HOME }}"
+  copy:
+    src: "files/{{ item }}"
+    dest: "{{ HOME }}/.{{ item }}"
+    mode: 0600
+  loop:
+    - ackrc
+    - tmux.conf
+
+
+#- name: install RHEL packages
+#  become: true
+#  vars:
+#    packagelist:
+#      - git
+#      - python2
+#      - screen
+#      - tmux
+#      - util-linux
+#      - vim-common
+#      - vim-enhanced
+#      - vim-filesystem
+#      - vim-minimal
+#      - virt-what
+#  yum:
+#    pkg: "{{ packagelist }}"
+#    state: installed
+#
+#- name: upgrade all packages
+#  become: true
+#  yum:
+#    name: '*'
+#    state: latest
+#
