@@ -1,17 +1,12 @@
 [alias]
-	st = status
 	info = remote -v show origin
+	lb = branch -a --list $1
 	lg = log --abbrev-commit --pretty=oneline --topo-order
 	lgg = log --graph
-	lb = branch -a --list $1
-	fp = "!git fetch; git pull"
-
-[user]
-	name = John Trammell
-	email = john.trammell@outsell.com
+	rpo = remote prune origin
+	st = status
 
 [core]
-	excludesfile = ~/.gitignore
 	warnambiguousrefs = false
 	sparsecheckout = true
 
@@ -24,11 +19,5 @@
 [push]
 	default = tracking
 
-;[achievement]
-;	upload = true
-
-[branch "master"]
-	rebase = true
-
 [branch]
-autosetuprebase = always
+	autosetuprebase = always
