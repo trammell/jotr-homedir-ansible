@@ -7,7 +7,8 @@
   connection: local
   gather_facts: yes
   roles:
-    - role: rcfiles
+    - role: packages
+#    - role: rcfiles
 
 #    - role: packages
 
