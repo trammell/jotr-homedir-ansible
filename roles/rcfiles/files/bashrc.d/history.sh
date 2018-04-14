@@ -1,7 +1,8 @@
 export HISTCONTROL=erasedups:ignoreboth
+export HISTFILESIZE=
 export HISTIGNORE='ls:history'
-export HISTSIZE=10000
-export HISTTIMEFORMAT='%F %T '
+export HISTSIZE=
+export HISTTIMEFORMAT="[%F %T] "
 export PROMPT_COMMAND='history -a'
 
 shopt -s cmdhist
