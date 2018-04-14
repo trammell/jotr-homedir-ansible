@@ -1,0 +1,16 @@
+---
+
+# see http://docs.ansible.com/ansible/latest/user_guide/playbooks_delegation.html#local-playbooks
+
+- name: install on localhost
+  hosts: 127.0.0.1
+  connection: local
+  gather_facts: yes
+  roles:
+    - role: rcfiles
+
+#    - role: packages
+
+#   - role: vimrc
+#   - role: bash
+
