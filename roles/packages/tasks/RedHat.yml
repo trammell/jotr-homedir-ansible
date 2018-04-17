@@ -17,6 +17,7 @@
       - rpm-sign
       - screen
       - the_silver_searcher
+      - tree
       - tmux
       - util-linux
       - vim-common
