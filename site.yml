@@ -7,11 +7,6 @@
   connection: local
   gather_facts: yes
   roles:
-    - role: packages
-#    - role: rcfiles
-
-#    - role: packages
-
-#   - role: vimrc
-#   - role: bash
-
+    - {role: 'vimrc', tags: 'vim'}
+    - {role: 'packages', tags: 'pkg'}
+    - {role: 'rcfiles', tags: 'rc'}
