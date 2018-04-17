@@ -1,11 +1,19 @@
 # .bash_profile
 
-# function for manupulating the path
+# load any aliases or functions
+if [ -f ~/.bashrc ]; then
+    . ~/.bashrc
+fi
+
+# define functions for manupulating the path
 unset pathedit
-function pathedit () {
-    if [ -d $1 ]; then
-        if ! echo $PATH | egrep -q "(^|:)$1($|:)" ; then
-            if [ "$2" = "after" ] ; then
+function pathedit() {
+    if [ -d $1 ]
+    then
+        if ! echo $PATH | egrep -q "(^|:)$1($|:)"
+        then
+            if [ "$2" = "after" ]
+            then
                 PATH=$PATH:$1
             else
                 PATH=$1:$PATH
@@ -15,12 +23,15 @@ function pathedit () {
     export PATH
 }
 
-pathedit $HOME/local/bin
-pathedit $HOME/bin
+# set up a fiew PATH entries
+for dir in $HOME/.local/bin $HOME/local/bin $HOME/bin
+do
+    if [ -d $dir ]
+    then
+        pathadd $dir
+    fi
+done
 
+# demolish the helper function
 unset pathedit
 
-# Get the aliases and functions
-if [ -f ~/.bashrc ]; then
-    . ~/.bashrc
-fi
