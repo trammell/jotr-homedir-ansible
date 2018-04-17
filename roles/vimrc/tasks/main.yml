@@ -1,0 +1,44 @@
+---
+# install ViM configuration favorites
+
+- name: create directory ~/.vim/
+  vars:
+    HOME: "{{ ansible_env.HOME }}"
+  file:
+    path: "{{ HOME }}/.vim/"
+    state: directory
+    mode: 0700
+
+- name: install vimrc.vim and vimau.vim
+  vars:
+    HOME: "{{ ansible_env.HOME }}"
+  copy:
+    src: "files/{{ item }}"
+    dest: "{{ HOME }}/.vim/{{ item }}"
+    mode: 0600
+  loop:
+    - vimrc.vim
+    - vimau.vim
+
+# - name: install vimrc symlink
+
+
+- name: install subdirs
+  vars:
+    HOME: "{{ ansible_env.HOME }}"
+  copy:
+    src: "files/{{ item }}"
+    dest: "{{ HOME }}/.vim/"
+    mode: 0600
+    directory_mode: 0700
+  loop:
+    - after
+    - autoload
+    - bundle
+    - colors
+    - doc
+    - ftplugin
+    - plugin
+    - snippets
+    - templates
+
