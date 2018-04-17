@@ -15,7 +15,6 @@ set nocompatible                " make Vim less vi-compatible
 syntax enable
     syntax sync fromstart
 
-
 " turn on highlighting of trailing spaces
 set list
 set listchars=trail:-,tab:\.\
@@ -149,7 +148,7 @@ nnoremap <leader><c-u> viwU
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
-iabbrev @@ johntrammell@gmail.com
+iabbrev @@ john.trammell@gmail.com
 iabbrev jsut just
 
 set nobackup
