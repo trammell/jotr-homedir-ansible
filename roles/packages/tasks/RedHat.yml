@@ -11,6 +11,7 @@
   vars:
     packagelist:
       - ack
+      - ctags-etags
       - git
       - python2
       - rpmdevtools
