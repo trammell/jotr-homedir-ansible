@@ -20,8 +20,13 @@
     - vimrc.vim
     - vimau.vim
 
-# - name: install vimrc symlink
-
+- name: install .vimrc symlink
+  vars:
+    HOME: "{{ ansible_env.HOME }}"
+  file:
+    state: link
+    src: ".vim/vimrc.vim"
+    dest: "{{ HOME }}/.vimrc"
 
 - name: install subdirs
   vars:
