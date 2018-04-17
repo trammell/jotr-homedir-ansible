@@ -13,6 +13,8 @@
       - ack
       - git
       - python2
+      - rpmdevtools
+      - rpm-sign
       - screen
       - the_silver_searcher
       - tmux
