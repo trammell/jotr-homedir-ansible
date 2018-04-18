@@ -11,11 +11,18 @@
   vars:
     packagelist:
       - ack
+      - bash-completion
+      - bash-completion-extras
       - ctags-etags
       - git
       - git-lfs
+      - hub
       - jq
       - python2
+      - python36
+      - python36-devel
+      - python36-libs
+      - python36-tools
       - rpmdevtools
       - rpm-sign
       - ruby
@@ -32,16 +39,4 @@
   yum:
     pkg: "{{ packagelist }}"
     state: installed
-
-- name: upgrade all packages
-  become: true
-  yum:
-    name: '*'
-    state: latest
-
-- name: yum clean all
-  become: true
-  command: yum clean metadata
-  args:
-    warn: no
 
