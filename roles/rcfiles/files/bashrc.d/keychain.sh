@@ -1,14 +1,7 @@
 #!/bin/bash
 
-# see also:
-#   http://www.funtoo.org/Keychain
-#   http://www.cyberciti.biz/faq/ssh-passwordless-login-with-keychain-for-scripts/
-# Re-use ssh-agent and/or gpg-agent between logins
+# Re-use ssh-agent and/or gpg-agent between logins:
+#   * http://www.funtoo.org/Keychain
+#   * http://www.cyberciti.biz/faq/ssh-passwordless-login-with-keychain-for-scripts/
 
-eval $(/usr/bin/keychain --eval --quiet outsell_jtrammell outsell_jtrammell_git johntrammell)
-
-#eval $(/usr/bin/keychain --quiet --eval $HOME/.ssh/outsell_jtrammell)
-#ssh-add ~/.ssh/outsell_jtrammell_git
-#ssh-add ~/.ssh/outsell_jtrammell
-#ssh-add ~/.ssh/johntrammell
-
+eval $(keychain --agents gpg,ssh --eval --quiet tram0004 tram0004-oit)
