@@ -2,6 +2,25 @@
 
 # install all my resource files
 
+- name: create directory ${HOME}/.local/
+  vars:
+    HOME: "{{ ansible_env.HOME }}"
+  file:
+    path: "{{ HOME }}/.local/"
+    state: directory
+    mode: 0700
+
+- name: install bashrc.d into .local
+  vars:
+    LOCAL: "{{ ansible_env.HOME }}/.local/"
+  copy:
+    src: "files/bashrc.d"
+    dest: "{{ ansible_env.HOME }}/.local/"
+    mode: 0600
+    directory_mode: 0700
+
+# Deliberately *not* installing `gitconfig` because it's a bit messy. Need
+# to template it out at some point in the future.
 - name: install source files as "dotfiles"
   vars:
     HOME: "{{ ansible_env.HOME }}"
@@ -11,30 +30,7 @@
     mode: 0600
   loop:
     - ackrc
+    - aliases
+    - cvsrc
     - tmux.conf
 
-
-#- name: install RHEL packages
-#  become: true
-#  vars:
-#    packagelist:
-#      - git
-#      - python2
-#      - screen
-#      - tmux
-#      - util-linux
-#      - vim-common
-#      - vim-enhanced
-#      - vim-filesystem
-#      - vim-minimal
-#      - virt-what
-#  yum:
-#    pkg: "{{ packagelist }}"
-#    state: installed
-#
-#- name: upgrade all packages
-#  become: true
-#  yum:
-#    name: '*'
-#    state: latest
-#

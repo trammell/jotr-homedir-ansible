@@ -10,14 +10,31 @@
 	warnambiguousrefs = false
 	sparsecheckout = true
 
+[user]
+	name = John Trammell
+	email = tram0004@umn.edu
+
 [instaweb]
 	httpd=webrick
 
 [diff]
 	tool = opendiff
 
-[push]
-	default = tracking
-
 [branch]
 	autosetuprebase = always
+	autosetupmerge = always
+
+[push]
+	default = current
+
+[credential]
+	helper = cache
+
+[credential "https://github.umn.edu"]
+	username = tram0004
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
