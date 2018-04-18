@@ -19,6 +19,7 @@ function multiwhich {
 }
 
 alias 'cd..'='cd ..'
+alias coh='cd ~/umn/orgs/chef-oit-hosting'
 alias h='history 100'
 alias ll='ls -l --color=tty'
 alias lel='less +G -n /var/log/apache2/error_log'
