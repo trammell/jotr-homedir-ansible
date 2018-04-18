@@ -14,6 +14,7 @@
       - ctags-etags
       - git
       - git-lfs
+      - jq
       - python2
       - rpmdevtools
       - rpm-sign
