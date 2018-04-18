@@ -19,6 +19,8 @@ function multiwhich {
 }
 
 alias 'cd..'='cd ..'
+alias chefinit='eval "$(chef shell-init bash)"'
+alias chef-init='eval "$(chef shell-init bash)"'
 alias coh='cd ~/umn/orgs/chef-oit-hosting'
 alias h='history 100'
 alias ll='ls -l --color=tty'
