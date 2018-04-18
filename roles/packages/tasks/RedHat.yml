@@ -13,9 +13,11 @@
       - ack
       - ctags-etags
       - git
+      - git-lfs
       - python2
       - rpmdevtools
       - rpm-sign
+      - ruby
       - screen
       - the_silver_searcher
       - tree
@@ -35,4 +37,10 @@
   yum:
     name: '*'
     state: latest
+
+- name: yum clean all
+  become: true
+  command: yum clean metadata
+  args:
+    warn: no
 
