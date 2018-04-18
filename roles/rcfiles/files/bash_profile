@@ -1,8 +1,15 @@
-# .bash_profile
+# ~/.bash_profile
 
 # load any aliases or functions
-if [ -f ~/.bashrc ]; then
+if [ -f ~/.bashrc ]
+then
     . ~/.bashrc
+fi
+
+# load an 'sh' profile if present
+if [ -r ~/.profile ]
+then
+    . ~/.profile
 fi
 
 # define functions for manupulating the path
