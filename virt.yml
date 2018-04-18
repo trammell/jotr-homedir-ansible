@@ -10,3 +10,4 @@
     - {role: 'vimrc', tags: 'vim'}
     - {role: 'packages', tags: 'pkg'}
     - {role: 'rcfiles', tags: 'rc'}
+    - {role: 'geerlingguy.samba', tags: 'smb', become: 'true'}
