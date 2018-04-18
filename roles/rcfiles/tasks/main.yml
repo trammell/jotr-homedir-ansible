@@ -10,12 +10,12 @@
     state: directory
     mode: 0700
 
-- name: install bashrc.d into .local
+- name: install files from bashrc.d/ into ~/.local/bashrc.d/
   vars:
     LOCAL: "{{ ansible_env.HOME }}/.local/"
   copy:
-    src: "files/bashrc.d"
-    dest: "{{ ansible_env.HOME }}/.local/"
+    src: "files/bashrc.d/"
+    dest: "{{ ansible_env.HOME }}/.local/bashrc.d/"
     mode: 0600
     directory_mode: 0700
 
@@ -31,6 +31,9 @@
   loop:
     - ackrc
     - aliases
+    - bashrc
+    - bash_profile
     - cvsrc
+    - perltidyrc
     - tmux.conf
 
