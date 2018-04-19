@@ -21,7 +21,6 @@
       - jq
       - lastpass-cli
       - pass
-      - pwck
       - pwgen
       - python2
       - python36
@@ -32,6 +31,7 @@
       - rpm-sign
       - ruby
       - screen
+      - shadow-utils
       - the_silver_searcher
       - tree
       - tmux
