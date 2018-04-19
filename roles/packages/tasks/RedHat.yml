@@ -11,6 +11,7 @@
   vars:
     packagelist:
       - ack
+      - apg
       - bash-completion
       - bash-completion-extras
       - ctags-etags
@@ -19,6 +20,9 @@
       - hub
       - jq
       - lastpass-cli
+      - pass
+      - pwck
+      - pwgen
       - python2
       - python36
       - python36-devel
