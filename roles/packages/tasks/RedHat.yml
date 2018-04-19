@@ -18,6 +18,7 @@
       - git-lfs
       - hub
       - jq
+      - lastpass-cli
       - python2
       - python36
       - python36-devel
