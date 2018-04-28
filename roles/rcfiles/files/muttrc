@@ -1,0 +1,14 @@
+# muttrc
+
+# put Mail in ~/.local/
+
+# set up GMail IMAP
+set imap_user = 'tram0004@umn.edu'
+set imap_pass = `/usr/bin/lpass show --password 2859624150580329823`
+set smtp_url = 'smtps://tram0004@smtp.umn.edu'
+set smtp_pass = `/usr/bin/lpass show --password 2859624150580329823`
+set folder = imaps://imap.gmail.com/
+set spoolfile = +INBOX
+set record = "+[Gmail]/Sent Mail"
+set postponed = "+[Gmail]/Drafts"
+set record=""
