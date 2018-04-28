@@ -16,6 +16,7 @@
       - bash-completion-extras
       - ctags-etags
       - git
+      - gitflow
       - git-lfs
       - hub
       - jq
