@@ -31,7 +31,7 @@ set pastetoggle=<F2>
 " remap ';' to ':'
 nnoremap ; :
 
-" FIXME
+" load types in filetype.vim
 filetype on
 
 " unicode/encoding settings
@@ -130,19 +130,23 @@ let NERDTreeIgnore=['\.py[co]$','\.swp$']
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " vimwiki setup (HTML goes into "~/Dropbox/vimwiki_html")
-let g:vimwiki_list = [{'path': '~/.vimwiki'}, {'path': '~/.outsell-vimwiki'}, {'path': '~/.hc-vimwiki'}]
+"let g:vimwiki_list = [{'path': '~/.vimwiki'}, {'path': '~/.outsell-vimwiki'}, {'path': '~/.hc-vimwiki'}]
+let g:vimwiki_list = [{'path': '~/.vimwiki'}]
 "let g:vimwiki_folding = 1
 
 " conditionally load defs from '~/.vim/vimau.vim'
 " see e.g. http://vim.wikia.com/wiki/Loading_scripts_in_vimrc_safely
-if filereadable($HOME . "/.vim/vimau.vim")
-    source $HOME/.vim/vimau.vim
-endif
 
+for rcfile in globpath($HOME . '/.vim/', '*.vim')
+    echom rcfile
+endfor
+
+"if filereadable($HOME . "/.vim/vimau.vim")
+"    source $HOME/.vim/vimau.vim
+"endif
 
 " exercises from Learn Vimscript the Hard Way
 "  echo ">^.^<"
-
 inoremap <leader><c-u> <esc>viwUi
 nnoremap <leader><c-u> viwU
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
