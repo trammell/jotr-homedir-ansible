@@ -20,6 +20,7 @@
       - git-lfs
       - hub
       - jq
+      - krb5-workstation
       - lastpass-cli
       - pass
       - pwgen
@@ -28,6 +29,7 @@
       - python36-devel
       - python36-libs
       - python36-tools
+      - rhnpush
       - rpmdevtools
       - rpm-sign
       - ruby
