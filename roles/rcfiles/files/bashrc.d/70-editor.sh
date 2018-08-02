@@ -16,6 +16,9 @@ fi
 if [ -z "$EDITOR" ]; then
     export EDITOR='/bin/editor'
 fi
+if [ -z "$VISUAL" ]; then
+    export VISUAL="$EDITOR"
+fi
 
 # define PAGER
 
