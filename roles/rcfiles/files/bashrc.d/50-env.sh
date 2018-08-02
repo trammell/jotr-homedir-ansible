@@ -8,3 +8,6 @@ export MYSQL_PS1="\u@\h:\d> "
 export MAGENTO_TEST_AUTHOR=1
 export APP_WAR_AUTHOR=1
 
+# configure lastpass timeout
+export LPASS_AGENT_TIMEOUT=0
+
