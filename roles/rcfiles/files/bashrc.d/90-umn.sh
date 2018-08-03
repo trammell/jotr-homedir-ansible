@@ -4,4 +4,4 @@
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:${HOME}/.local/bin
 
 # set lastpass environment variables
-eval "$(lpass show --notes 193464738201392340193728201)"
+eval "$(lpass show --notes 4126596948628885560)"
