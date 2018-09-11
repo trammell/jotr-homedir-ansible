@@ -1,3 +1,4 @@
+#!/bin/bash
 # vim: set filetype=sh :
 
 # smart 'which' function: first argument is default, remaining
@@ -6,9 +7,12 @@ unset multiwhich
 function multiwhich {
     local default=$1
     shift
-    until [ -z "$1" ]; do  # loop over parameters
+
+    until [ -z "$1" ]
+    do
         w=$(which $1 2>/dev/null)
-        if [ ! -z "$w" ]; then
+        if [ ! -z "$w" ]
+        then
             echo $w
             return
         fi
