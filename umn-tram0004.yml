@@ -7,7 +7,8 @@
   connection: local
   gather_facts: yes
   roles:
-    - {role: 'vimrc', tags: 'vim'}
+    - {role: 'bash', tags: 'bash'}
+    - {role: 'vim', tags: 'vim'}
     - {role: 'packages', tags: 'pkg'}
     - {role: 'rcfiles', tags: 'rc'}
     - {role: 'geerlingguy.samba', tags: 'smb', become: 'true'}

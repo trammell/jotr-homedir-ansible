@@ -1,0 +1,33 @@
+---
+
+# install local bash configuration
+
+- name: install base bash files
+  vars:
+    HOME: "{{ ansible_env.HOME }}"
+  copy:
+    src: "files/{{ item }}"
+    dest: "{{ HOME }}/.{{ item }}"
+    mode: 0600
+  loop:
+    - bash_aliases
+    - bash_profile
+    - bashrc
+
+- name: create directory ${HOME}/.local/
+  vars:
+    HOME: "{{ ansible_env.HOME }}"
+  file:
+    path: "{{ HOME }}/.local/"
+    state: directory
+    mode: 0700
+
+- name: install files from bashrc.d/ into ~/.local/bashrc.d/
+  vars:
+    LOCAL: "{{ ansible_env.HOME }}/.local/"
+  copy:
+    src: "files/bashrc.d/"
+    dest: "{{ ansible_env.HOME }}/.local/bashrc.d/"
+    mode: 0600
+    directory_mode: 0700
+

@@ -1,9 +1,11 @@
 ---
 
-# Include OS specific tasks
+# Include OS specific package install tasks
 
 - include: RedHat.yml
   when: ansible_distribution == "RedHat"
 - include: Ubuntu.yml
   when: ansible_distribution == "Ubuntu"
+- include: MacOSX.yml
+  when: ansible_distribution == "MacOSX"
 
