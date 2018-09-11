@@ -10,45 +10,35 @@ Ansible playbook to install a standard home directory for `tram0004`.
 ansible-galaxy install geerlingguy.samba
 ```
 
-
 # Home Directory Installs
 
+Install everything:
 
-## `macos` environment
+```
+ansible-playbook -v umn-tram0004.yml
+```
 
-make -f Makefile.macos
+Install `bash` configuration:
 
+```
+ansible-playbook -v umn-tram0004.yml --tags bash
+```
 
-## `virt` environment
+Install packages:
 
-make -f Makefile.virt
+```
+ansible-playbook -v umn-tram0004.yml --tags pkg
+```
 
+Install resource files:
 
+```
+ansible-playbook -v umn-tram0004.yml --tags rc
+```
 
+Install `ViM` configuration:
 
-usage:
-	@echo "usage: make [install]"
-
-install:
-	ansible-playbook -v virt.yml
-
-install-pkg:
-	ansible-playbook -v virt.yml --tags pkg
-
-install-rc:
-	ansible-playbook -v virt.yml --tags rc
-
-install-smb:
-	ansible-playbook -v virt.yml --tags smb
-
-install-vim:
-	ansible-playbook -v virt.yml --tags vim
-
-
-
-# TO DO
-
-* distinguish between "developer" installs and "user" installs
-* figure out a way to get the user environment installed uniformly
-
+```
+ansible-playbook -v virt.yml --tags vim
+```
 
