@@ -1,0 +1,8 @@
+---
+
+- name: update homebrew
+  become: false
+  homebrew:
+    update_homebrew: yes
+    upgrade_all: yes
+
