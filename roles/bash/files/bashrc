@@ -1,6 +1,12 @@
 # .bashrc
 # vim: set filetype=sh :
 
+# source local aliases file
+if [ -f ${HOME}/.bash_aliases ]
+then
+    . ${HOME}/.bash_aliases
+fi
+
 # source global bash script
 if [ -f /etc/bashrc ]
 then
