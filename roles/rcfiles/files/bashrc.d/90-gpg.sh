@@ -1,7 +1,3 @@
-# set up GPG environment
-
-# set a safe path
+# set a safe path, then pull GPG config from lastpass
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:${HOME}/.local/bin
-
-# pull GPG config from lastpass
-eval "$(lpass show --notes 7398612839046152843625455238)"
+eval "$(lpass show --notes 1393745538382042451)"
