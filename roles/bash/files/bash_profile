@@ -35,7 +35,7 @@ for dir in $HOME/.local/bin $HOME/local/bin $HOME/bin
 do
     if [ -d $dir ]
     then
-        pathadd $dir
+        pathedit $dir
     fi
 done
 
