@@ -1,5 +1,5 @@
 # enable the chef development kit
-PATH=/bin:/sbin:/usr/bin:/usr/sbin:${HOME}/.local/bin
+PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:${HOME}/.local/bin
 if [ -e /opt/chefdk ]
 then
     eval "$(chef shell-init bash)"
