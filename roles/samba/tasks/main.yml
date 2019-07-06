@@ -1,8 +1,0 @@
----
-
-#- name: install smb.conf
-#  become: true
-#  copy:
-#    src: yum clean metadata
-#    dest: 
-
