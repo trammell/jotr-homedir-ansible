@@ -1,44 +1,18 @@
-home-tram0004-ansible
-=====================
+jotr-homedir-ansible
+====================
 
-Ansible playbook to install a standard home directory for `tram0004`.
+Ansible playbook to install a standard home directory for `jotr`.
 
-
-# Prerequisites
-
-```
-ansible-galaxy install geerlingguy.samba
-```
 
 # Home Directory Installs
 
-Install everything:
+Install everything: `ansible-playbook -v jotr.yml`
 
-```
-ansible-playbook -v umn-tram0004.yml
-```
+Install `bash` configuration: `ansible-playbook -v jotr.yml -t bash`
 
-Install `bash` configuration:
+Install packages: `ansible-playbook -v jotr.yml -t pkg`
 
-```
-ansible-playbook -v umn-tram0004.yml --tags bash
-```
+Install resource files: `ansible-playbook -v jotr.yml -t rc`
 
-Install packages:
-
-```
-ansible-playbook -v umn-tram0004.yml --tags pkg
-```
-
-Install resource files:
-
-```
-ansible-playbook -v umn-tram0004.yml --tags rc
-```
-
-Install `ViM` configuration:
-
-```
-ansible-playbook -v virt.yml --tags vim
-```
+Install `ViM` configuration: `ansible-playbook -v jotr.yml -t vim`
 
